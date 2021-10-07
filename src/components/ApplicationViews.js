@@ -5,7 +5,7 @@ import { EventForm } from "./Events/EventForm"
 import { EventEditForm } from "./Events/EventEditForm"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
-
+import { UserList } from "./friends/Userlist"
 
 export const ApplicationViews = () => {
 
@@ -22,7 +22,7 @@ export const ApplicationViews = () => {
         {/* Render the component for news articles */}
       </Route>
       <Route path="/friends">
-        {/* Render the component for list of friends */}
+        <UserList />
       </Route>
       <Route path="/messages">
         {/* Render the component for the messages */}
