@@ -43,19 +43,19 @@ export const ArticleForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="title">Title</label>
-                    <input type="text" id="name" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Article Title" value={article.title} />
+                    <input type="text" id="title" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Article Title" value={article.title} />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="synopsis">Synopsis</label>
-                    <input type="text" id="date" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Synopsis" value={article.synopsis} />
+                    <input type="text" id="synopsis" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Synopsis" value={article.synopsis} />
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="url">Link </label>
-                    <input type="text" id="location" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Link" value={article.url}/>
+                    <input type="text" id="url" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Link" value={article.url}/>
                 </div>
             </fieldset>
             <button className="btn btn-primary"

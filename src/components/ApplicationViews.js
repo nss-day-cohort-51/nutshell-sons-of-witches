@@ -21,7 +21,7 @@ export const ApplicationViews = () => {
   return (
     <>
 
-      <Route path="/Articles">
+      <Route exact path="/Articles">
         <ArticleList />
       </Route>
       <Route path="/friends">
@@ -41,15 +41,18 @@ export const ApplicationViews = () => {
       <Route path="/events/create">
         <EventForm />
       </Route>
+      <Route path="/articles/create">
+        <ArticleForm />
+      </Route>
+      
       <Route path="/events/:eventId(\d+)/edit">
        {isAuthenticated ? <EventEditForm /> : <Redirect to="/login" />}
       </Route>
+      
       <Route path="/articles/:articleId(\d+)/edit">
        {isAuthenticated ? <ArticleEditForm /> : <Redirect to="/login" />}
       </Route>
-      <Route path="/articles/create">
-       {isAuthenticated ? <ArticleForm /> : <Redirect to="/login" />}
-      </Route>
+   
 
       <Route path="/login">
         <Login setAuthUser={setAuthUser} />

@@ -24,9 +24,9 @@ export const ArticleEditForm = () => {
     
     const editedArticle = {
       id: articleId,
-      name: article.name,
-      date: article.timestamp,
-      location: article.location
+      name: article.title,
+      synopsis: article.synopsis,
+      url: article.url
     };
 
  update(editedArticle)
@@ -63,7 +63,7 @@ export const ArticleEditForm = () => {
               required
               className="form-control"
               onChange={handleFieldChange}
-              id="Synopsis"
+              id="synopsis"
               value={article.synopsis}
             />
            
@@ -73,7 +73,7 @@ export const ArticleEditForm = () => {
               required
               className="form-control"
               onChange={handleFieldChange}
-              id="usl"
+              id="url"
               value={article.url}
             />
             
