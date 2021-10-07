@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
-import { addEvent } from '../modules/EventManager'
+import { addEvent } from '../../modules/EventManager'
 
 
 

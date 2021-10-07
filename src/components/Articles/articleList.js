@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import { getAllArticles } from '../modules/ArticleManager';
+import { getAllArticles } from '../../modules/ArticleManager';
 import { ArticleCard } from './articleCard';
-import { deleteArticle} from '../modules/ArticleManager';
+import { deleteArticle} from '../../modules/ArticleManager';
 import {useHistory} from 'react-router-dom'
 
 

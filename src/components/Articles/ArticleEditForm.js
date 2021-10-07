@@ -1,7 +1,7 @@
 //Author(s): Emily Reed Purpose: gives user a form to edit an event
 
 import React, { useState, useEffect } from "react"
-import { getArticleById, update } from "../modules/ArticleManager";
+import { getArticleById, update } from "../../modules/ArticleManager";
 import { useParams, useHistory } from "react-router"
 
 export const ArticleEditForm = () => {
@@ -46,6 +46,7 @@ export const ArticleEditForm = () => {
     <>
       <form>
         <fieldset>
+        <label htmlFor="Title">Title </label>
           <div className="formgrid">
             <input
               type="text"
@@ -55,8 +56,8 @@ export const ArticleEditForm = () => {
               id="title"
               value={article.title}
             />
-            <label htmlFor="Title">Title </label>
-
+          
+            <label htmlFor="synopsis">Synopsis</label>
             <input
               type="text"
               required
@@ -65,12 +66,22 @@ export const ArticleEditForm = () => {
               id="Synopsis"
               value={article.synopsis}
             />
-            <label htmlFor="synopsis">Synopsis</label>
+           
+            <label htmlFor="url">Link</label>
+            <input
+              type="text"
+              required
+              className="form-control"
+              onChange={handleFieldChange}
+              id="usl"
+              value={article.url}
+            />
+            
           </div>
           <div className="alignRight">
             <button
               type="button" disabled={isLoading}
-              onClick={updateExistingEvent}
+              onClick={updateExistingArticle}
               className="btn btn-primary"
             >Submit</button>
           </div>
