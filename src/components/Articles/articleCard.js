@@ -1,6 +1,6 @@
 import React from "react";
-// import { Link } from 'react-router-dom'
-import { useHistory } from "react-router-dom";
+import { Link } from 'react-router-dom'
+import { useHistory, } from "react-router-dom";
 
 export const ArticleCard = ({ article, handleDeleteArticle }) => {
 
@@ -16,9 +16,9 @@ export const ArticleCard = ({ article, handleDeleteArticle }) => {
         <button type="button" onClick={() => handleDeleteArticle(article.id)}>
           delete
         </button>
-        {/* <Link to={`/Articles/${Article.id}`}>
+         <Link to={`/Articles/${article.id}`}>
           <button>Details</button>
-        </Link> */} 
+        </Link> 
 
         <button type="button"
   onClick={() => history.push(`/articles/${article.id}/edit`)}>
