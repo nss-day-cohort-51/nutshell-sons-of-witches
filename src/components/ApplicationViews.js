@@ -8,6 +8,7 @@ import { ArticleEditForm } from "./Articles/ArticleEditForm"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 import { UserList } from "./friends/Userlist"
+import { ArticleForm } from "./Articles/ArticleForm"
 
 export const ApplicationViews = () => {
 
@@ -46,7 +47,9 @@ export const ApplicationViews = () => {
       <Route path="/articles/:articleId(\d+)/edit">
        {isAuthenticated ? <ArticleEditForm /> : <Redirect to="/login" />}
       </Route>
-
+      <Route path="/articles/create">
+       {isAuthenticated ? <ArticleForm /> : <Redirect to="/login" />}
+      </Route>
 
       <Route path="/login">
         <Login setAuthUser={setAuthUser} />
