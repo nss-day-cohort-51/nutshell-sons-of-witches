@@ -1,12 +1,13 @@
 import React from "react"
 import { Route } from "react-router-dom"
+import { ArticleList } from "./Articles/articleList"
 
 export const ApplicationViews = () => {
   return (
     <>
 
-      <Route exact path="/">
-        {/* Render the component for news articles */}
+      <Route path="/Articles">
+        <ArticleList />
       </Route>
       <Route path="/friends">
         {/* Render the component for list of friends */}
