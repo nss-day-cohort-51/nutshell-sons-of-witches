@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import { getAllArticles } from '../../modules/ArticleManager';
+import {getAllArticles, deleteArticle} from '../modules/ArticleManager'
 import { ArticleCard } from './articleCard';
-import { deleteArticle} from '../../modules/ArticleManager';
 import {useHistory} from 'react-router-dom'
-
+import "./article.css"
 
 
 export const ArticleList = () => {
@@ -40,7 +39,7 @@ export const ArticleList = () => {
       </section> 
     </div>
 
-        <div className="container-cards">
+        <div className="card-holder">
         {articles.map(article =>
           <ArticleCard
             key={article.id}
