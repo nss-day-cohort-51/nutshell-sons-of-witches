@@ -1,86 +1,87 @@
 //Author(s): Emily Reed Purpose: gives user a form to edit an event
 
 import React, { useState, useEffect } from "react"
-import {getEventById, update} from "../../modules/EventManager"
+import { getArticleById, update } from "../../modules/ArticleManager";
 import { useParams, useHistory } from "react-router"
 
-export const EventEditForm = () => {
-  const [event, setEvent] = useState({ name: "", date:"", location: "" });
+export const ArticleEditForm = () => {
+  const [article, setArticle] = useState({ title: "", synopsis:"", url: "" });
   const [isLoading, setIsLoading] = useState(false);
 
-  const {eventId} = useParams();
+  const {articleId} = useParams();
   const history = useHistory();
 //prepares data to be changed
   const handleFieldChange = evt => {
-    const stateToChange = { ...event };
+    const stateToChange = { ...article };
     stateToChange[evt.target.id] = evt.target.value;
-    setEvent(stateToChange);
+    setArticle(stateToChange);
   };
 //processes changed data
-  const updateExistingEvent = evt => {
+  const updateExistingArticle = evt => {
     evt.preventDefault()
     setIsLoading(true);
 
     
-    const editedEvent = {
-      id: eventId,
-      name: event.name,
-      date: event.date,
-      location: event.location
+    const editedArticle = {
+      id: articleId,
+      name: article.title,
+      synopsis: article.synopsis,
+      url: article.url
     };
 
- update(editedEvent)
-    .then(() => history.push("/events")
+ update(editedArticle)
+    .then(() => history.push("/articles")
     )
   }
 //takes the new info and updates the previous data to the new data
   useEffect(() => {
-  getEventById(eventId)
-      .then(event => {
-        setEvent(event);
+  getArticleById(articleId)
+      .then(article => {
+        setArticle(article);
         setIsLoading(false);
       });
-  }, [eventId]);
+  }, [articleId]);
 //return displays the edit form so an event can be edited
   return (
     <>
       <form>
         <fieldset>
+        <label htmlFor="Title">Title </label>
           <div className="formgrid">
             <input
               type="text"
               required
               className="form-control"
               onChange={handleFieldChange}
-              id="name"
-              value={event.name}
+              id="title"
+              value={article.title}
             />
-            <label htmlFor="name">Event name</label>
-
-            <input
-              type="date"
-              required
-              className="form-control"
-              onChange={handleFieldChange}
-              id="date"
-              value={event.date}
-            />
-            <label htmlFor="date">Date</label>
-
-              <input
+          
+            <label htmlFor="synopsis">Synopsis</label>
+            <textarea maxlength="50"
               type="text"
               required
               className="form-control"
               onChange={handleFieldChange}
-              id="location"
-              value={event.location}
+              id="synopsis"
+              value={article.synopsis}
             />
-            <label htmlFor="location">Event Location</label>
+           
+            <label htmlFor="url">Link</label>
+            <input
+              type="text"
+              required
+              className="form-control"
+              onChange={handleFieldChange}
+              id="url"
+              value={article.url}
+            />
+            
           </div>
           <div className="alignRight">
             <button
               type="button" disabled={isLoading}
-              onClick={updateExistingEvent}
+              onClick={updateExistingArticle}
               className="btn btn-primary"
             >Submit</button>
           </div>

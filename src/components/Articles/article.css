@@ -1,0 +1,140 @@
+.card-holder::-webkit-scrollbar {
+    width: 10px; 
+
+ }
+
+.card-holder::-webkit-scrollbar-track {
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+}
+
+.card-holder::-webkit-scrollbar-thumb {
+  background: #4e4e4e;
+  border-radius: 25px;
+}
+.card-holder::-webkit-scrollbar-corner {
+    border-radius: 10px;
+
+}
+
+  .card-holder {  
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+  
+    align-items: center;
+    width: 400px;
+    height: 600px;
+
+    
+      margin: 1em;
+      padding: 1em;
+      box-shadow: #310f3fd7 10px 10px 0 0;
+      border-radius: 1.25rem;
+      background-color: #6728B5;  
+          ;
+
+  }
+
+.card {
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+width: 300px;
+    word-wrap: break-word;
+    background-color: #b651e2a3;
+    background-clip: border-box;
+    border-radius: 1.25rem;
+  
+    margin: 1em;
+    padding: 1em;
+    box-shadow: #310f3fd7 4px 4px 0 0;
+  
+
+
+
+  }
+  .card-title{
+      font-size: 24px;
+  }
+  .synopsis{
+    font-size: 16px
+  }
+  .card-body{
+      display: flex;
+    flex-direction: column;
+
+    
+  }
+  .newsFeed{
+     color: white;
+  }
+  .cardHeader {
+      display: flex;
+      flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .cardHolderHeader{
+      
+   
+    display: flex;
+    flex-direction: row;
+  justify-content: space-around;
+
+
+
+  
+}
+
+  .buttons{
+    padding: 1em;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: baseline;
+
+  }
+
+
+
+  
+  
+  /* CSS */
+  .button-74 {
+    background-color: #be96eeb2;
+    border: 2px solid #422800;
+    border-radius: 30px;
+    box-shadow: #422800 4px 4px 0 0;
+    color: #422800;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 0 18px;
+    line-height: 30px;
+    width: 95px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin: 5px ;
+  }
+  
+  .button-74:hover {
+    background-color: #fff;
+  }
+  
+  .button-74:active {
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
+  }
+  
+  @media (min-width: 768px) {
+    .button-74 {
+      min-width: 15px;
+      padding: 0 25px;
+    }
+  }

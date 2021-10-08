@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
-import { addEvent } from '../../modules/EventManager';
+import { addEvent } from '../../modules/EventManager'
 
 
 
@@ -50,7 +50,7 @@ export const EventForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="date">Event Date:</label>
-                    <input type="text" id="date" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Event Date" value={event.timestamp} />
+                    <input type="date" id="date" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Event Date" value={event.date} />
                 </div>
             </fieldset>
             <fieldset>

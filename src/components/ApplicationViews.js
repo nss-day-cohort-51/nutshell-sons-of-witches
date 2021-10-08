@@ -1,12 +1,19 @@
+
+import { TaskForm } from "./tasks/TaskForm"
+import { TaskList } from "./tasks/TaskList"
+import { TaskEditForm } from "./tasks/TaskEditForm"
+import { ArticleList } from "./Articles/articleList"
 import React, {useState} from "react"
 import { Route,Redirect } from "react-router-dom"
 import { EventList } from "./Events/EventList"
 import { EventForm } from "./Events/EventForm"
 import { EventEditForm } from "./Events/EventEditForm"
+import { ArticleEditForm } from "./Articles/ArticleEditForm"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 import { UserList } from "./friends/Userlist"
 import { FriendsList } from "./friends/FriendsList"
+import { ArticleForm } from "./Articles/ArticleForm"
 
 export const ApplicationViews = () => {
 
@@ -16,11 +23,12 @@ export const ApplicationViews = () => {
     sessionStorage.setItem("nutshell_user", JSON.stringify(user))
     setIsAuthenticated(sessionStorage.getItem("nutshell_user") !== null)
   }
+
   return (
     <>
 
-      <Route exact path="/">
-        {/* Render the component for news articles */}
+      <Route exact path="/Articles">
+        <ArticleList />
       </Route>
       <Route exact path="/friends">
         <UserList />
@@ -32,8 +40,18 @@ export const ApplicationViews = () => {
       <Route path="/messages">
         {/* Render the component for the messages */}
       </Route>
+
+
       <Route path="/tasks">
         {/* Render the component for the user's tasks */}
+        {isAuthenticated ? <TaskList /> : <Redirect to="/login" />}
+        <TaskList />
+      </Route>
+      <Route path="/tasks/create">
+        <TaskForm />
+      </Route>
+      <Route path="/tasks/:taskId(\d+)/edit">
+        {isAuthenticated ? <TaskEditForm /> : <Redirect to="/login" />}
       </Route>
 
       <Route exact path="/events">
@@ -43,9 +61,18 @@ export const ApplicationViews = () => {
       <Route path="/events/create">
         <EventForm />
       </Route>
+      <Route path="/articles/create">
+        <ArticleForm />
+      </Route>
+      
       <Route path="/events/:eventId(\d+)/edit">
        {isAuthenticated ? <EventEditForm /> : <Redirect to="/login" />}
       </Route>
+      
+      <Route path="/articles/:articleId(\d+)/edit">
+       {isAuthenticated ? <ArticleEditForm /> : <Redirect to="/login" />}
+      </Route>
+   
 
       <Route path="/login">
         <Login setAuthUser={setAuthUser} />
@@ -55,5 +82,6 @@ export const ApplicationViews = () => {
         <Register setAuthUser={setAuthUser} />
       </Route>
     </>
+  
   )
 }
