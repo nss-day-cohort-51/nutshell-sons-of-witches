@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { EventCard } from './EventCard';
-import { getAllEvents, deleteEvent } from '../../modules/EventManager';
+import { getAllEvents, update, deleteEvent } from '../../modules/EventManager'
 import { useHistory } from 'react-router';
 
 export const EventList = () => {

@@ -1,11 +1,14 @@
+import { ArticleList } from "./Articles/articleList"
 import React, {useState} from "react"
 import { Route,Redirect } from "react-router-dom"
 import { EventList } from "./Events/EventList"
 import { EventForm } from "./Events/EventForm"
 import { EventEditForm } from "./Events/EventEditForm"
+import { ArticleEditForm } from "./Articles/ArticleEditForm"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 import { UserList } from "./friends/Userlist"
+import { ArticleForm } from "./Articles/ArticleForm"
 
 export const ApplicationViews = () => {
 
@@ -18,8 +21,8 @@ export const ApplicationViews = () => {
   return (
     <>
 
-      <Route exact path="/">
-        {/* Render the component for news articles */}
+      <Route exact path="/Articles">
+        <ArticleList />
       </Route>
       <Route path="/friends">
         <UserList />
@@ -38,10 +41,18 @@ export const ApplicationViews = () => {
       <Route path="/events/create">
         <EventForm />
       </Route>
+      <Route path="/articles/create">
+        <ArticleForm />
+      </Route>
+      
       <Route path="/events/:eventId(\d+)/edit">
        {isAuthenticated ? <EventEditForm /> : <Redirect to="/login" />}
       </Route>
-
+      
+      <Route path="/articles/:articleId(\d+)/edit">
+       {isAuthenticated ? <ArticleEditForm /> : <Redirect to="/login" />}
+      </Route>
+   
 
       <Route path="/login">
         <Login setAuthUser={setAuthUser} />
