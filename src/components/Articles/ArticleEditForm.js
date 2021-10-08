@@ -58,7 +58,7 @@ export const ArticleEditForm = () => {
             />
           
             <label htmlFor="synopsis">Synopsis</label>
-            <input
+            <textarea maxlength="50"
               type="text"
               required
               className="form-control"

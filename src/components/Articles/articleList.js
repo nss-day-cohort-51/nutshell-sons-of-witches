@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {getAllArticles, deleteArticle} from '../modules/ArticleManager'
+import {getAllArticles, deleteArticle} from '../../modules/ArticleManager'
 import { ArticleCard } from './articleCard';
 import {useHistory} from 'react-router-dom'
 import "./article.css"

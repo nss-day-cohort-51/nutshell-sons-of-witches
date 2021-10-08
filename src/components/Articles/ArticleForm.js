@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 import { addArticle } from '../../modules/ArticleManager';
 
-
 export const ArticleForm = () => {
    
 //useState will hold the event name, date, and location
@@ -49,7 +48,7 @@ export const ArticleForm = () => {
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="synopsis">Synopsis</label>
-                    <input type="text" id="synopsis" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Synopsis" value={article.synopsis} />
+                    <textarea  type="text" id="synopsis" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Synopsis" value={article.synopsis} />
                 </div>
             </fieldset>
             <fieldset>

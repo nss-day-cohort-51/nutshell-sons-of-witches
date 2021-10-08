@@ -1,33 +1,31 @@
 import React from "react";
-import { Link } from 'react-router-dom'
-import { useHistory, } from "react-router-dom";
-
+import { useHistory } from "react-router-dom";
+import "./article.css"
 export const ArticleCard = ({ article, handleDeleteArticle }) => {
-
   const history = useHistory();
+
 
   return (
     <div className="card">
-      <div className="card-content">
-        <h3>
-         <span className="card-title">{article.title}</span>
+        
+        <h3 className="card-title"><span>{article.title}</span>
         </h3>
+
+        <div className="synopsis">
         <p>Synopsis: {article.synopsis}</p>
-        <button type="button" onClick={() => handleDeleteArticle(article.id)}>
+        </div>
+        <div><a href="{article.url}">{article.url}</a></div>
+        
+        <div className="buttons">
+        <button className="button-74" type="button" onClick={() => handleDeleteArticle(article.id)}>
           delete
         </button>
-    
+        <button className="button-74" type="button" onClick={() => history.push(`articles/${article.id}/edit`)}>
+          edit
+        </button>
+        </div>
+       
 
-        <button type="button"
-  onClick={() => history.push(`/articles/${article.id}/edit`)}>
-  Edit
-</button>
-
-      </div>
     </div>
   );
 };
-
-//   <picture>
-//   <img src={require('./dog.svg')} alt="My Dog" />
-// </picture>
