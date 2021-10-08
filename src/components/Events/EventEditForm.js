@@ -25,7 +25,7 @@ export const EventEditForm = () => {
     const editedEvent = {
       id: eventId,
       name: event.name,
-      date: event.timestamp,
+      date: event.date,
       location: event.location
     };
 
@@ -58,7 +58,7 @@ export const EventEditForm = () => {
             <label htmlFor="name">Event name</label>
 
             <input
-              type="text"
+              type="date"
               required
               className="form-control"
               onChange={handleFieldChange}
@@ -66,6 +66,16 @@ export const EventEditForm = () => {
               value={event.date}
             />
             <label htmlFor="date">Date</label>
+
+              <input
+              type="text"
+              required
+              className="form-control"
+              onChange={handleFieldChange}
+              id="location"
+              value={event.location}
+            />
+            <label htmlFor="location">Event Location</label>
           </div>
           <div className="alignRight">
             <button
