@@ -1,3 +1,7 @@
+
+import { TaskForm } from "./tasks/TaskForm"
+import { TaskList } from "./tasks/TaskList"
+import { TaskEditForm } from "./tasks/TaskEditForm"
 import { ArticleList } from "./Articles/articleList"
 import React, {useState} from "react"
 import { Route,Redirect } from "react-router-dom"
@@ -18,6 +22,7 @@ export const ApplicationViews = () => {
     sessionStorage.setItem("nutshell_user", JSON.stringify(user))
     setIsAuthenticated(sessionStorage.getItem("nutshell_user") !== null)
   }
+
   return (
     <>
 
@@ -30,8 +35,18 @@ export const ApplicationViews = () => {
       <Route path="/messages">
         {/* Render the component for the messages */}
       </Route>
+
+
       <Route path="/tasks">
         {/* Render the component for the user's tasks */}
+        {isAuthenticated ? <TaskList /> : <Redirect to="/login" />}
+        <TaskList />
+      </Route>
+      <Route path="/tasks/create">
+        <TaskForm />
+      </Route>
+      <Route path="/tasks/:taskId(\d+)/edit">
+        {isAuthenticated ? <TaskEditForm /> : <Redirect to="/login" />}
       </Route>
 
       <Route exact path="/events">
@@ -62,5 +77,6 @@ export const ApplicationViews = () => {
         <Register setAuthUser={setAuthUser} />
       </Route>
     </>
+  
   )
 }
