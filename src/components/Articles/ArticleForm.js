@@ -6,18 +6,23 @@ import { addArticle } from '../../modules/ArticleManager';
 
 export const ArticleForm = () => {
    
+
 //useState will hold the event name, date, and location
     const [article, setArticle] = useState({
+    
         title: "",
         synopsis: "",
         url:""
     });
 
+    
 
+    
 
     const history = useHistory();
 //makes copy of object and allows us to add our event, date, and location
     const handleControlledInputChange = (evt) => {
+        const currentUser = parseInt(sessionStorage.getItem("nutshell_user"))
         const newArticle = { ...article }
         let selectedVal = evt.target.value
         if (evt.target.id.includes(" ")) {
@@ -25,13 +30,18 @@ export const ArticleForm = () => {
         }
         newArticle[evt.target.id] = selectedVal
         // update state
+        newArticle.userId = currentUser
         setArticle(newArticle)
     }
 
 
 //saves the event and 'redirects' user back to event page to see events
     const handleClickSaveArticle = (evt) => {
+        // const currentUser = parsedInt(sessionStorage.getItem("nutshell_user"))
+        
+
         evt.preventDefault() //Prevents the browser from submitting the form
+
             addArticle(article)
                 .then(() => history.push("/articles"))
     }
