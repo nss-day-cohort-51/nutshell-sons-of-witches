@@ -4,6 +4,7 @@ import "./article.css"
 export const ArticleCard = ({ article, handleDeleteArticle }) => {
   const history = useHistory();
 
+    //return shows the event to the DOM
 
   return (
     <div className="card">

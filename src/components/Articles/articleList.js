@@ -13,13 +13,13 @@ export const ArticleList = () => {
 
   const getArticles = () => {
     return getAllArticles().then(articlesFromAPI => {
-      // We'll do something more interesting with this data soon.
-     
+      // After the data comes back from API, we
+    //  use the setEvents function to update state
      
       setArticles(articlesFromAPI);
     });
   };
-
+//function deletes a single event and then re-renders to display events still in API
   const handleDeleteArticle = id => {
     deleteArticle(id)
     .then(() => getAllArticles().then(setArticles));
@@ -29,6 +29,9 @@ export const ArticleList = () => {
     console.log("useEffect Invoked")
     getArticles();
   }, []);
+  // Finally we use .map() to "loop over" the events array to show a list of event cards
+
+  //return shows a button to add an event, displays the event cards in a list, and shows a button to delete events
 
         return (
    <>
