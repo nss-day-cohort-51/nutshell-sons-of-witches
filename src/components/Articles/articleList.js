@@ -36,18 +36,24 @@ export const ArticleList = () => {
         return (
    <>
         <div className="container-cards">
-        <section className="section-content">
-        <button className="button-74" role="button" onClick={() => {history.push("/articles/create")}}> 
-      <span className="text"> Post Article</span> </button>
-      </section> 
-    </div>
-
+        
         <div className="card-holder">
+        <div className="cardHolderHeader">
+        <section><h3 className="newsFeed">News Feed</h3></section>
+        <section className="postArticleButton">
+        <button className="button-74" role="button" onClick={() => {history.push("/articles/create")}}> 
+      <span className="text"> Post </span> </button>
+      </section> 
+        </div>
+
+     
         {articles.map(article =>
           <ArticleCard
             key={article.id}
             article={article}
             handleDeleteArticle={handleDeleteArticle} />)}
+            
+      </div>
       </div>
    </>
       
