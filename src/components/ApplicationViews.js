@@ -42,7 +42,6 @@ export const ApplicationViews = () => {
        {isAuthenticated ? <EventEditForm /> : <Redirect to="/login" />}
       </Route>
 
-
       <Route path="/login">
         <Login setAuthUser={setAuthUser} />
       </Route>

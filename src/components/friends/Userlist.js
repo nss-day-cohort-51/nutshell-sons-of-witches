@@ -21,13 +21,8 @@ export const UserList = () => {
         })
     };
 
-    
-
-
     useEffect(() => {
           
-            
-
             if (searchTerms !== "")  {
             
                 const matchingUsers = users.filter(user => user.name.toLowerCase().includes(searchTerms.toLowerCase()))
