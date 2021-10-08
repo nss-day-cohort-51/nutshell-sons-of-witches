@@ -1,21 +1,24 @@
 import React, { useState} from "react";
 import { useHistory } from "react-router";
-import {  addTask } from '../modules/TaskManager';
+import {  addTask } from '../modules/TaskManager'
 
 export const TaskForm = () => {
     const [task, setTask] = useState({
         name: "",
-        date: "",
+        date: ""
     });
 
     const history = useHistory();
 
     const handleControlledInputChange = (event) => {
         const newTask = { ...task }
+        const currentUser = parseInt(sessionStorage.getItem("nutshell_user"))
         let selectedVal = event.target.value
-        if (event.target.id.includes("Id")) {
+        if (event.target.id.includes(" ")) {
             selectedVal = parseInt(selectedVal)
         }
+        newTask[event.target.id] = selectedVal
+        newTask.userId = currentUser
         setTask(newTask)
     }
 

@@ -22,8 +22,9 @@ export const TaskEditForm = () => {
     const editedTask = {
       id: taskId,
       name: task.name,
-	  date: event.timestamp
+	    date: event.timestamp
     };
+
     update(editedTask)
     .then(() => history.push("/tasks")
     )

@@ -12,7 +12,7 @@ export const TaskCard = ({ task, handleDeleteTask}) => {
                 <p>Expected Task Completion Date: {task.date}</p>
                 <button type="button" onClick={() => handleDeleteTask(task.id)}>Delete</button>
                 <button type="button"
-                     onClick={() => history.push(`/task/${task.id}/edit`)}>
+                     onClick={() => history.push(`/tasks/${task.id}/edit`)}>
                 Edit
                 </button>
             </div>
