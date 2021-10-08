@@ -25,7 +25,7 @@ export const EventEditForm = () => {
     const editedEvent = {
       id: eventId,
       name: event.name,
-      date: event.timestamp,
+      date: event.date,
       location: event.location
     };
 

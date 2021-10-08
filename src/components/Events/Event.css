@@ -1,0 +1,13 @@
+/* Author(s):Emily Reed Purpose: style the event cards where the first ([0]) is different than the descending events */
+
+.card:first-child  {
+    width: 100%;
+    background-color: blueviolet;
+    color: white;
+    text-transform: uppercase;
+    
+}
+
+.card{
+    width: 95%;
+}

@@ -2,17 +2,17 @@
 
 import React from 'react';
 import { useHistory } from 'react-router';
+import "./Event.css"
 export const EventCard = ({ event, handleDeleteEvent }) => {
     const history = useHistory();
     //return shows the event to the DOM
     return (
-
-        <div className="card">
-            <div className="card-content">
+        <>
+            <div className="card">
                 <h3><span className="card-eventname">
-                    Event: {(event.name)}
+                    Event: {event.name}
                 </span></h3>
-                <p>Event Date: {event.timestamp}</p>
+                <p>Event Date: {event.date}</p>
                 <p>Event Location: {event.location}</p>
                 <button type="button" onClick={() => handleDeleteEvent(event.id)}>Delete</button>
                 <button type="button"
@@ -21,6 +21,10 @@ export const EventCard = ({ event, handleDeleteEvent }) => {
                 </button>
                 <button type="button">Show Weather</button>
             </div>
-        </div>
-    );
+        </>
+    )
 }
+
+
+
+

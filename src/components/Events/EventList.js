@@ -26,9 +26,13 @@ export const EventList = () => {
     getEvents();
   }, []);
 
-  // Finally we use .map() to "loop over" the events array to show a list of event cards
+  
+  
 
+
+  // Finally we use .map() to "loop over" the events array to show a list of event cards
   //return shows a button to add an event, displays the event cards in a list, and shows a button to delete events
+ 
   return (
     <>
     <section className="section-content">
@@ -40,7 +44,8 @@ export const EventList = () => {
 </section>
 
     <div className="container-cards">
-      {events.map(event => <EventCard key={event.id}event={event} handleDeleteEvent={handleDeleteEvent}/>)}
+      { 
+      events.map(event => <EventCard key={event.id}event={event} handleDeleteEvent={handleDeleteEvent}/>)}
 
     </div>
     </>
