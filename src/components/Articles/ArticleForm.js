@@ -38,6 +38,7 @@ export const ArticleForm = () => {
 //return gives us the event form and allows us to add an event
     return (
         <form className="articleForm">
+           <div className="cardHeader"></div>
             <h2 className="articleForm__title">New Article</h2>
             <fieldset>
                 <div className="form-group">

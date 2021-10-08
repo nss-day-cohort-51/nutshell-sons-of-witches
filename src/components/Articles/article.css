@@ -1,41 +1,32 @@
+.card-holder::-webkit-scrollbar {
+    width: 10px; 
 
-.card {
-    position: relative;
+ }
+
+.card-holder::-webkit-scrollbar-track {
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+}
+
+.card-holder::-webkit-scrollbar-thumb {
+  background: #4e4e4e;
+  border-radius: 25px;
+}
+.card-holder::-webkit-scrollbar-corner {
+    border-radius: 10px;
+
+}
+
+  .card-holder {  
+    overflow: auto;
     display: flex;
     flex-direction: column;
-    width: 300px;
-    height: 300px;
-    word-wrap: break-word;
-    background-color: #b651e2a3;
-    background-clip: border-box;
-    border-radius: 1.25rem;
-    align-content: center;
-    justify-content: center;
-    margin: 1em;
-    padding: 1em;
-    box-shadow: #310f3fd7 4px 4px 0 0;
-
-
-
-  }
-  .card-title{
-      font-size: 36px;
-  }
-  .synopsis{
-    font-size: 24px
-  }
   
-  .card-holder {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 400px;
     height: 600px;
-    overflow-x: hidden;
-    overflow-y: visible;
-      flex-basis: 28%;
+
+    
       margin: 1em;
       padding: 1em;
       box-shadow: #310f3fd7 10px 10px 0 0;
@@ -45,8 +36,59 @@
 
   }
 
+.card {
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+width: 300px;
+    word-wrap: break-word;
+    background-color: #b651e2a3;
+    background-clip: border-box;
+    border-radius: 1.25rem;
+  
+    margin: 1em;
+    padding: 1em;
+    box-shadow: #310f3fd7 4px 4px 0 0;
+  
+
+
+
+  }
+  .card-title{
+      font-size: 24px;
+  }
+  .synopsis{
+    font-size: 16px
+  }
+  .card-body{
+      display: flex;
+    flex-direction: column;
+
+    
+  }
+  .newsFeed{
+     color: white;
+  }
+  .cardHeader {
+      display: flex;
+      flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .cardHolderHeader{
+      
+   
+    display: flex;
+    flex-direction: row;
+  justify-content: space-around;
+
+
+
+  
+}
+
   .buttons{
-    margin-top: 20px;
     padding: 1em;
     display: flex;
     flex-direction: row-reverse;
@@ -72,7 +114,7 @@
     font-size: 12px;
     padding: 0 18px;
     line-height: 30px;
-    width: 90px;
+    width: 95px;
     text-align: center;
     text-decoration: none;
     user-select: none;
