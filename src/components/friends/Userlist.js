@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getAllUsers } from "../../modules/FriendsManager";
+import { getAllUsers, addFriend } from "../../modules/FriendsManager";
 import { UserCard } from "./UserCard";
 
 

@@ -14,6 +14,7 @@ import { Register } from "./auth/Register"
 import { UserList } from "./friends/Userlist"
 import { FriendsList } from "./friends/FriendsList"
 import { ArticleForm } from "./Articles/ArticleForm"
+import "./applicationViews.css"
 
 export const ApplicationViews = () => {
 
@@ -26,7 +27,12 @@ export const ApplicationViews = () => {
 
   return (
     <>
-
+    <div className="dashboard">
+<Route exact path="/">
+<ArticleList />
+<EventList />
+</Route>
+</div>
       <Route exact path="/Articles">
         <ArticleList />
       </Route>
