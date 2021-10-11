@@ -40,10 +40,9 @@ export const ApplicationViews = () => {
       </Route>
 
 
-      <Route path="/tasks">
+      <Route exact path="/tasks">
         {/* Render the component for the user's tasks */}
         {isAuthenticated ? <TaskList /> : <Redirect to="/login" />}
-
       </Route>
       <Route path="/tasks/create">
         <TaskForm />
