@@ -15,6 +15,7 @@ import { UserList } from "./friends/Userlist"
 import { FriendsList } from "./friends/FriendsList"
 import { ArticleForm } from "./Articles/ArticleForm"
 import "./applicationViews.css"
+import "./nav/NavBar.css"
 
 export const ApplicationViews = () => {
 

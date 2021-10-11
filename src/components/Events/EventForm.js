@@ -20,12 +20,14 @@ export const EventForm = () => {
     const history = useHistory();
 //makes copy of object and allows us to add our event, date, and location
     const handleControlledInputChange = (evt) => {
+        const currentUser = parseInt(sessionStorage.getItem("nutshell_user"))
         const newEvent = { ...event }
         let selectedVal = evt.target.value
         if (evt.target.id.includes(" ")) {
             selectedVal = parseInt(selectedVal)
         }
         newEvent[evt.target.id] = selectedVal
+        newEvent.userId = currentUser
         // update state
         setEvent(newEvent)
     }

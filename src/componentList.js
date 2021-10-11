@@ -5,11 +5,15 @@ import { EventList } from "./components/Events/EventList";
 
 export const componentList = () => (
   <>
+
   <Route>
   <ArticleList />
-  <EventList />
-  </Route>
+ </Route>
 
+
+ <Route> 
+   <EventList /> 
+   </Route>
 </>
       
 
