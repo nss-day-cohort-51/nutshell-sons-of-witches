@@ -1,13 +1,32 @@
 import React from "react";
+import { getAllUsers } from "../../modules/FriendsManager";
 import { useEffect, useState } from "react/cjs/react.development";
-import { getAllFriends } from "../../modules/FriendsManager";
+import {  deleteFriend, getAllFriends } from "../../modules/FriendsManager";
 import { FriendCard } from "./FriendCard";
-
+import { UserCard } from "./UserCard"
+import "./FriendsList.css"
 
 export const FriendsList = () => {
     const [friends, setFriends] = useState([]);
 
- 
+    const [searchTerms, setSearchTerms] =useState("");
+
+    const [users, setUsers] = useState([]);
+
+    const [filteredUsers, setFilteredUsers] = useState([]);
+  
+    const getUsers = () => {
+
+        return getAllUsers().then(usersFromAPI => {
+            setUsers(usersFromAPI)
+        })
+    };
+
+    const handleDeleteFriend = id => {
+        deleteFriend(id)
+          .then(() => getAllFriends().then(setFriends));
+      };
+
 
     const getFriends = () => {
         return getAllFriends().then(friendsFromAPI => {
@@ -18,18 +37,51 @@ export const FriendsList = () => {
 
     useEffect(() => {
         getFriends();
-        
+        getUsers()
     },[]);
 
+    useEffect(() => {
+          
+        if (searchTerms !== "")  {
+        
+            const matchingUsers = users.filter(user => user.name.toLowerCase().includes(searchTerms.toLowerCase()))
+            setFilteredUsers(matchingUsers)
+        }
+        else {
+            setFilteredUsers(users)
+        }
+},[searchTerms, users]
+);
 
     return (
-        <>
-            <section>
+        <>  
+            
+            <input 
+            type= "text"
+            className="userSearch"
+            value={searchTerms}
+            onChange={(e) => setSearchTerms(e.target.value)}
+            />
+
+            <div className="container-cards">
+                {filteredUsers.map(user =>
+                <UserCard
+                    key={user.name}
+                     user = {user}
+                     setFriends= {setFriends}
+                />)}
+                
+            </div>
+
+            <section className="friendsList">
                 {friends.map(friend =>
                 <FriendCard 
                    key={friend.user.name}
-                   friend= {friend} />   
+                   friend= {friend}  
+                   handleDeleteFriend={handleDeleteFriend}/>  
+               
                 )}
+
             </section>
         </>
     )
