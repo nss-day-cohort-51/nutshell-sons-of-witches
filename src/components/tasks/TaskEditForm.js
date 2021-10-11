@@ -22,7 +22,7 @@ export const TaskEditForm = () => {
     const editedTask = {
       id: taskId,
       name: task.name,
-	    date: event.timestamp
+	    date: task.date
     };
 
     update(editedTask)
@@ -53,7 +53,7 @@ export const TaskEditForm = () => {
             <label htmlFor="name">Task name</label>
 
             <input
-              type="text"
+              type="date"
               required
               className="form-control"
               onChange={handleFieldChange}

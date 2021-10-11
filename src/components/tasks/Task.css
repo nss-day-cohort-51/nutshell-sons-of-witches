@@ -1,0 +1,9 @@
+.task-card  {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgb(124, 44, 199);
+    color: white;
+    padding: 1em;
+    
+}
