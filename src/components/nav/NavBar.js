@@ -1,18 +1,17 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { ArticleList } from "../Articles/articleList"
+import { FriendsList } from "../friends/FriendsList"
 
 
 
 
 export const NavBar = (props) => {
   return (
+    <>
     <div className="sidebar">
 
 
           <Link className="#articles" to="/Articles">Articles</Link>
-
-          <Link className="#friends" to="/friends">Friends</Link>
 
           <Link className="#news" to="/messages">Messages</Link>
     
@@ -20,9 +19,12 @@ export const NavBar = (props) => {
     
       
           <Link className="#events" to="/events">Events</Link>
-   
+          <FriendsList />
     
     </div>
 
+  
+
+   </>
   )
 }

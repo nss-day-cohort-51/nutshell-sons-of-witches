@@ -37,10 +37,9 @@ export const ApplicationViews = () => {
     <div className="dashboard">
 <Route exact path="/">
 <ArticleList />
-<FriendsList />
-
 <EventList />
 <TaskList />
+<h1>Dashboard</h1>
 </Route>
 
       <Route exact path="/Articles">
