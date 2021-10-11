@@ -1,9 +1,9 @@
 import React from "react";
 import { useHistory } from "react-router";
 import { addFriend } from "../../modules/FriendsManager";
+import { getAllFriends } from "../../modules/FriendsManager";
 
-
-export const UserCard = ({user}) => {
+export const UserCard = ({user, setFriends}) => {
 
     const history = useHistory();
 
@@ -16,12 +16,15 @@ export const UserCard = ({user}) => {
         currentUserId: currentUser,
         userId: getUserId
     }  
-
+        
 
         addFriend(newFriend) 
+            .then(() => getAllFriends().then(setFriends))
             .then(() => history.push("/friends"))
+            
         
     }
+
 
 return(
     <section className="userCard">
@@ -32,10 +35,13 @@ return(
         type="button"
         className="button"
         id={user.id}
-        onClick={(event) => AddFriendButton(event.target.id)}
+        onClick={(event) =>  AddFriendButton(event.target.id)}
+       
     >
         Add Friend
     </button>
     </section>
 )
+
+
 }

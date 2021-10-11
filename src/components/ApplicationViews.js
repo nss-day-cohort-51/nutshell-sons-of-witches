@@ -11,7 +11,7 @@ import { EventEditForm } from "./Events/EventEditForm"
 import { ArticleEditForm } from "./Articles/ArticleEditForm"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
-import { UserList } from "./friends/Userlist"
+
 import { FriendsList } from "./friends/FriendsList"
 import { ArticleForm } from "./Articles/ArticleForm"
 import "./applicationViews.css"
@@ -46,9 +46,7 @@ export const ApplicationViews = () => {
       <Route exact path="/Articles">
         <ArticleList />
       </Route>
-      <Route exact path="/friends">
-        <UserList />
-      </Route>
+      
       <Route path="/friends">
         <FriendsList />
       </Route>
@@ -58,7 +56,7 @@ export const ApplicationViews = () => {
       </Route>
 
 
-      <Route path="/tasks">
+      <Route exact path="/tasks">
         {/* Render the component for the user's tasks */}
         {isAuthenticated ? <TaskList /> : <Redirect to="/login" />}
     
