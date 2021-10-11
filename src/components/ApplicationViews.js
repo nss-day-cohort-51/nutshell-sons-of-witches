@@ -14,6 +14,9 @@ import { Register } from "./auth/Register"
 
 import { FriendsList } from "./friends/FriendsList"
 import { ArticleForm } from "./Articles/ArticleForm"
+import { MessageEditForm } from "./PublicMessages/MessagesEditForm"
+import { MessageForm } from "./PublicMessages/MessagesForm"
+import { MessageList } from "./PublicMessages/MessagesList"
 
 export const ApplicationViews = () => {
 
@@ -35,8 +38,15 @@ export const ApplicationViews = () => {
         <FriendsList />
       </Route>
       
-      <Route path="/messages">
+      <Route exact path="/messages">
         {/* Render the component for the messages */}
+        {isAuthenticated ? <MessageList /> : <Redirect to="/login" />}
+      </Route>
+      <Route path="/messages/create">
+        <MessageForm />
+      </Route>
+      <Route path="/messages/:messageId(\d+)/edit">
+       {isAuthenticated ? <MessageEditForm /> : <Redirect to="/login" />}
       </Route>
 
 
