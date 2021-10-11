@@ -16,8 +16,14 @@ import { FriendsList } from "./friends/FriendsList"
 import { ArticleForm } from "./Articles/ArticleForm"
 import "./applicationViews.css"
 import "./nav/NavBar.css"
+import "./Articles/article.css"
 
 export const ApplicationViews = () => {
+  
+  const triggerText = 'Open form';
+  const onSubmit = (event) => {
+    event.preventDefault(event);}
+
 
   const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("nutshell_user") !== null)
 
@@ -31,9 +37,12 @@ export const ApplicationViews = () => {
     <div className="dashboard">
 <Route exact path="/">
 <ArticleList />
+<FriendsList />
+<UserList />
 <EventList />
+<TaskList />
 </Route>
-</div>
+
       <Route exact path="/Articles">
         <ArticleList />
       </Route>
@@ -68,7 +77,7 @@ export const ApplicationViews = () => {
       <Route path="/events/create">
         <EventForm />
       </Route>
-      <Route path="/articles/create">
+      <Route exact path="/articles/create">
         <ArticleForm />
       </Route>
       
@@ -88,6 +97,7 @@ export const ApplicationViews = () => {
       <Route path="/register">
         <Register setAuthUser={setAuthUser} />
       </Route>
+      </div>
     </>
   
   )

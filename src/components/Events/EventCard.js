@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useHistory } from 'react-router';
-import "./Event.css"
+
 export const EventCard = ({ event, handleDeleteEvent }) => {
     const history = useHistory();
     //return shows the event to the DOM
@@ -14,12 +14,14 @@ export const EventCard = ({ event, handleDeleteEvent }) => {
                 </span></h3>
                 <p>Event Date: {event.date}</p>
                 <p>Event Location: {event.location}</p>
-                <button type="button" onClick={() => handleDeleteEvent(event.id)}>Delete</button>
-                <button type="button"
+                <div className="buttons">
+                <button className="button-7"  type="button" onClick={() => handleDeleteEvent(event.id)}>Delete</button>
+                <button className="button-7" type="buttson"
                     onClick={() => history.push(`/events/${event.id}/edit`)}>
                     Edit
                 </button>
-                <button type="button">Show Weather</button>
+                <button className="button-7" type="button">Weather</button>
+            </div>
             </div>
         </>
     )

@@ -1,5 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import { ArticleList } from "../Articles/articleList"
+
 
 
 
@@ -19,7 +21,8 @@ export const NavBar = (props) => {
       
           <Link className="#events" to="/events">Events</Link>
    
-   
+    
     </div>
+
   )
 }
