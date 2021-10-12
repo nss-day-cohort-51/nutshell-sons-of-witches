@@ -11,6 +11,8 @@ export const FriendsList = () => {
 
     const [searchTerms, setSearchTerms] =useState("");
 
+    const currentUser = parseInt(sessionStorage.getItem("nutshell_user"))
+
     const [users, setUsers] = useState([]);
 
     const [filteredUsers, setFilteredUsers] = useState([]);
@@ -56,24 +58,14 @@ export const FriendsList = () => {
     return (
         <>  
             
-            <input 
-            type= "text"
-            className="userSearch"
-            value={searchTerms}
-            onChange={(e) => setSearchTerms(e.target.value)}
-            />
+        
 
-            <div className="container-cards">
-                {filteredUsers.map(user =>
-                <UserCard
-                    key={user.name}
-                     user = {user}
-                     setFriends= {setFriends}
-                />)}
-                
-            </div>
-
+            <div className="user-container-cards">
             <section className="friendsList">
+            <h2>My Friends</h2>
+            <p>GOOML - Get out of my life / aka delete</p>
+            <div className="list">
+               
                 {friends.map(friend =>
                 <FriendCard 
                    key={friend.user.name}
@@ -81,8 +73,32 @@ export const FriendsList = () => {
                    handleDeleteFriend={handleDeleteFriend}/>  
                
                 )}
-
+</div>
             </section>
+            <div className="usersearch">   
+            <label for="usersearch">Find a User</label>
+                 <input id="usersearch" type= "text" className="userSearch"
+                 value={searchTerms}
+                 onChange={(e) => setSearchTerms(e.target.value)}
+            /></div>
+            <div className="userlist">
+                {filteredUsers.map(user => 
+                {if (currentUser === user.id){ 
+                       return ""
+                    }else {
+                        return  <UserCard
+                        key={user.name}
+                         user = {user}
+                         setFriends= {setFriends}
+                         friends= {friends}
+                    />
+                    }
+                }
+               )}
+                </div>
+            </div>
+
+      
         </>
-    )
+    ) 
 };

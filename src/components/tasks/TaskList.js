@@ -31,17 +31,20 @@ export const TaskList = () => {
 
     return (
 		<>
-		<section className="section-content">
+        <div className="card-holder">
+            <div className="cardHolderHeader">
 			<button type="button"
-				className="btn"
+				className="button-7"
 				onClick={() => {history.push("/tasks/create")}}>
 				Add Task
 			</button>
-		</section>
+            </div>
 		<div className="container-cards">
 			{incompleteTasks.map(task =>
 				<TaskCard reload={reload} key={task.id} task={task} handleDeleteTask={handleDeleteTask} />)}
+
 		</div>
+        </div>
 		</>
 	);
 };

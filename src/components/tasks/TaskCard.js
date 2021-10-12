@@ -10,22 +10,28 @@ export const TaskCard = ({ task, reload, handleDeleteTask}) => {
         taskComplete(task).then(reload)
     }
 
-    
+    const currentUser = parseInt(sessionStorage.getItem("nutshell_user"))
 
     return (
 
-        <div className="task-card">
+        <div className="card">
             <div className="card-info"> 
                 <h3>Task: {(task.name)}</h3>
                 <p>Completion Date: {task.date}</p>
-                <input onChange={handleCheckboxComplete}type="checkbox" name="complete" id="complete"></input>
+                {task.userId === currentUser &&
+                <input onChange={handleCheckboxComplete}type="checkbox" name="complete" id="complete"></input>}
                 <label for="complete">complete</label>
-                <button type="button" onClick={() => handleDeleteTask(task.id)}>Delete</button>
-                <button type="button"
+                <button type="button"></button>
+                <p>Expected Completion Date: {task.date}</p>
+                {task.userId === currentUser && <div className="buttons">
+                <button className="button-7" type="button" onClick={() => handleDeleteTask(task.id)}>Delete</button>
+                <button className="button-7" type="button"
                      onClick={() => history.push(`/tasks/${task.id}/edit`)}>
                 Edit
                 </button>
-            </div>
+                </div>}
+                
+            </div> 
         </div>
     );
 }

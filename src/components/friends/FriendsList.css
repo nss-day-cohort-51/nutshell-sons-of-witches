@@ -1,4 +1,22 @@
-.friendsList {
-    border: solid black;
+.user-container-cards {
+   
     margin: 10px;
+    width: 150px;
+}
+.userlist{
+
+   
+    width: fit-content;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.userSearch{
+
+    border-radius: 10px;
+}
+
+.friend-button{
+     background-color: #2b0855;
+    border-radius: 10px;
 }

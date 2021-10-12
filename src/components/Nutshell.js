@@ -5,9 +5,10 @@ import { NavBar } from "./nav/NavBar"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 import "./Nutshell.css"
-
+import "./nav/NavBar.css"
 
 export const Nutshell = () => (
+  <div className="home">
   <>
     <Route
       render={() => {
@@ -16,7 +17,6 @@ export const Nutshell = () => (
             <>
               <NavBar />
               <ApplicationViews />
-  
             </>
           )
         } else {
@@ -32,4 +32,5 @@ export const Nutshell = () => (
       <Register />
     </Route>
   </>
+  </div>
 )

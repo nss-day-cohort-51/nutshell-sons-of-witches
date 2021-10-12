@@ -1,8 +1,10 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import { useState } from "react";
 
 export const ArticleCard = ({ article, handleDeleteArticle }) => {
   const history = useHistory();
+  const currentUser = parseInt(sessionStorage.getItem("nutshell_user"))
 
     //return shows the event to the DOM
 
@@ -20,16 +22,18 @@ export const ArticleCard = ({ article, handleDeleteArticle }) => {
             </div>
             
      </div>
-
+     {article.userId === currentUser && 
+     
      <div className="buttons">
   
-  <button className="button-74" type="button" onClick={() => handleDeleteArticle(article.id)}>
-  delete </button>
   
-  <button className="button-74" type="button" onClick={() => history.push(`articles/${article.id}/edit`)}>
+    <button className="button-7" type="button" onClick={() => handleDeleteArticle(article.id)}>
+  delete </button>
+
+  <button className="button-7" type="button" onClick={() => history.push(`articles/${article.id}/edit`)}>
   edit
   </button>
-  </div>
+  </div>}
      
      </div>
 
