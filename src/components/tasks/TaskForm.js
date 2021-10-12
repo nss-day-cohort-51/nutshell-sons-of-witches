@@ -5,7 +5,8 @@ import {  addTask } from '../modules/TaskManager'
 export const TaskForm = () => {
     const [task, setTask] = useState({
         name: "",
-        date: ""
+        date: "",
+        status: false
     });
 
     const history = useHistory();
@@ -25,7 +26,7 @@ export const TaskForm = () => {
     const handleClickSaveTask = (event) => {
 		event.preventDefault()
             addTask(task)
-                .then(() => history.push("/tasks"))
+                .then(() => history.push("/"))
     }
      
     return (

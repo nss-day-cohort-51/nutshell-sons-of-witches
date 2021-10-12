@@ -9,8 +9,6 @@ export const NavBar = (props) => {
   return (
     <>
     <div className="sidebar">
-      
-        
           <FriendsList />
     
     </div>

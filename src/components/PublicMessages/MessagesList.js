@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { MessagesCard } from './MessagesCard';
-import { getAllMessages, update, deleteMessage } from '../../modules/MessageManager'
+import { getAllMessages, deleteMessage } from '../../modules/MessageManager'
 import { useHistory } from 'react-router';
 
 export const MessageList = () => {
@@ -20,6 +20,7 @@ export const MessageList = () => {
     deleteMessage(id)
       .then(() => getAllMessages().then(setMessages));
   };
+  
 
   //first render
   // put "messages" in dependancy array for demoing
@@ -36,7 +37,7 @@ export const MessageList = () => {
  
   return (
     <>
-    <section className="event-card-holder">
+    <section className="card-holder">
   <button type="button"
       className="button-7"
       onClick={() => {history.push("/messages/create")}}>
@@ -46,7 +47,7 @@ export const MessageList = () => {
 
     <div className="container-cards">
       { 
-      messages.map(message => <MessagesCard key={message.id}message={message} handleDeleteMessage={handleDeleteMessage} setMessages={setMessages}/>)}
+      messages.map(message => <MessagesCard key={message.id}message={message} handleDeleteMessage={handleDeleteMessage} setMessages={setMessages} />)}
 
     </div>
     </section>
