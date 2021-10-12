@@ -22,7 +22,9 @@ export const TaskEditForm = () => {
     const editedTask = {
       id: taskId,
       name: task.name,
-	    date: task.date
+	    date: task.date,
+      status: false,
+      userId: parseInt(sessionStorage.getItem("nutshell_user"))
     };
 
     update(editedTask)
