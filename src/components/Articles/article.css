@@ -16,7 +16,50 @@
     border-radius: 10px;
 
 }
+.event-card-holder::-webkit-scrollbar {
+  width: 10px; 
 
+}
+
+.event-card-holder::-webkit-scrollbar-track {
+background-color: rgb(255, 255, 255);
+border-radius: 10px;
+}
+
+.event-card-holder::-webkit-scrollbar-thumb {
+background: #4e4e4e;
+border-radius: 25px;
+}
+.event-card-holder::-webkit-scrollbar-corner {
+  border-radius: 10px;
+
+}
+#event-card-holder:first-child {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  color: rgb(247, 4, 4);
+  text-transform: uppercase;
+  
+}
+.event-card-holder{  
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  width: 300px;
+  height: 600px;
+
+  
+    margin: 1em;
+    padding: 1em;
+    
+    border-radius: 1.25rem;
+    background-color: rgb(152, 93, 223);  
+        ;
+
+}
   .card-holder {  
     overflow-y: auto;
     overflow-x: hidden;

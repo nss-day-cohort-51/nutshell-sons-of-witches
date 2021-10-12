@@ -47,9 +47,10 @@ export const EventList = () => {
       Add Event
   </button>
   </div>
+  <div id="event-card-holder">
       { 
       events.map(event => <EventCard key={event.id}event={event} handleDeleteEvent={handleDeleteEvent}/>)}
-
+</div>
     </div>
     
 

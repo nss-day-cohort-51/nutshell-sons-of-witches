@@ -14,6 +14,7 @@ export const EventCard = ({ event, handleDeleteEvent }) => {
                 </span></h3>
                 <p>Event Date: {event.date}</p>
                 <p>Event Location: {event.location}</p>
+                <p>Event Time: {event.time}</p>
                 <div className="buttons">
                 <button className="button-7"  type="button" onClick={() => handleDeleteEvent(event.id)}>Delete</button>
                 <button className="button-7" type="buttson"
