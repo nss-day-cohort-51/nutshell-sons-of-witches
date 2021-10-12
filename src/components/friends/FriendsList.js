@@ -11,6 +11,8 @@ export const FriendsList = () => {
 
     const [searchTerms, setSearchTerms] =useState("");
 
+    const currentUser = parseInt(sessionStorage.getItem("nutshell_user"))
+
     const [users, setUsers] = useState([]);
 
     const [filteredUsers, setFilteredUsers] = useState([]);
@@ -61,6 +63,7 @@ export const FriendsList = () => {
             <div className="user-container-cards">
             <section className="friendsList">
             <h2>My Friends</h2>
+            <p>GOOML - Get out of my life / aka delete</p>
             <div className="list">
                
                 {friends.map(friend =>
@@ -79,16 +82,23 @@ export const FriendsList = () => {
                  onChange={(e) => setSearchTerms(e.target.value)}
             /></div>
             <div className="userlist">
-                {filteredUsers.map(user =>
-                <UserCard
-                    key={user.name}
-                     user = {user}
-                     setFriends= {setFriends}
-                />)}
+                {filteredUsers.map(user => 
+                {if (currentUser === user.id){ 
+                       return ""
+                    }else {
+                        return  <UserCard
+                        key={user.name}
+                         user = {user}
+                         setFriends= {setFriends}
+                         friends= {friends}
+                    />
+                    }
+                }
+               )}
                 </div>
             </div>
 
       
         </>
-    )
+    ) 
 };
