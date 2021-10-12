@@ -12,18 +12,25 @@ export const TaskList = () => {
         });
     };
 
-    const handleDeleteTask = id => {
+    const reload = () => {
+        getTasks()
+    }
+
+
+    const handleDeleteTask = (id) => {
+        console.log(id)
         deleteTask(id)
             .then(() => getAllTasks().then(setTasks));
     };
-
+    
+    const incompleteTasks = tasks.filter(t => t.status === false)
+    console.log(incompleteTasks)
     useEffect(() => {
         getTasks();
     }, []);
 
     return (
 		<>
-		<section className="section-content">
         <div className="card-holder">
             <div className="cardHolderHeader">
 			<button type="button"
@@ -32,11 +39,12 @@ export const TaskList = () => {
 				Add Task
 			</button>
             </div>
-		
-			{tasks.map(task =>
-				<TaskCard key={task.id} task={task} handleDeleteTask={handleDeleteTask} />)}
+		<div className="container-cards">
+			{incompleteTasks.map(task =>
+				<TaskCard reload={reload} key={task.id} task={task} handleDeleteTask={handleDeleteTask} />)}
+
 		</div>
-        </section>
+        </div>
 		</>
 	);
 };

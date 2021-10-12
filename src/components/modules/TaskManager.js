@@ -26,6 +26,17 @@ export const addTask = (newTask) => {
 	}).then(response => response.json())
 }
 
+export const taskComplete = (completeTask) => {
+	completeTask.status = true
+	  return fetch(`${remoteURL}/${completeTask.id}`, {
+		  method: "PATCH",
+		  headers: {
+			  "Content-Type": "application/json"
+		  },
+		  body: JSON.stringify(completeTask)
+	  }).then(data => data.json());
+  }
+
 export const update = (editedTask) => {
 	return fetch(`${remoteURL}/${editedTask.id}`, {
 		method: "PUT",
