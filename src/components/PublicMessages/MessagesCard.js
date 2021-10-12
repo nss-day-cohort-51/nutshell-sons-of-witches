@@ -5,6 +5,7 @@ import { useHistory } from 'react-router';
 export const MessagesCard = ({ message, handleDeleteMessage, setMessages }) => {
     const history = useHistory();
     //return shows the message to the DOM
+    const currentUser = parseInt(sessionStorage.getItem("nutshell_user"))
     return (
         <>
             <div className="message">
@@ -13,13 +14,19 @@ export const MessagesCard = ({ message, handleDeleteMessage, setMessages }) => {
                  {message.message}
                 </span></h3>
                 <p>Sent at: {message.timestamp}</p>
-                <button type="button" onClick={() => handleDeleteMessage(message.id)}>Delete</button>
-                <button type="button"
-                    onClick={() => history.push(`/messages/${message.id}/edit`)}>
-                    Edit
-                </button>
+
+                {message.userId === currentUser && <div className="buttons">
+  
+  
+    <button className="button-7" type="button" onClick={() => handleDeleteMessage(message.id)}>
+  delete </button>
+
+  <button className="button-7" type="button" onClick={() => history.push(`messages/${message.id}/edit`)}>
+  edit
+  </button>
+  </div>}
+
             </div>
         </>
     )
 }
-
