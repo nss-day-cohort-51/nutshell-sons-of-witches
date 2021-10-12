@@ -20,7 +20,7 @@ export const UserCard = ({user, setFriends}) => {
 
         addFriend(newFriend) 
             .then(() => getAllFriends().then(setFriends))
-            .then(() => history.push("/friends"))
+            // .then(() => history.push("/friends"))
             
         
     }

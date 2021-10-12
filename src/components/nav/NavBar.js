@@ -1,28 +1,30 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import "bootstrap/dist/css/bootstrap.min.css"
+import { FriendsList } from "../friends/FriendsList"
+
+
+
 
 export const NavBar = (props) => {
   return (
-    <nav className="navbar bg-dark text-white flex-md-nowrap p-0 shadow">
+    <>
+    <div className="sidebar">
 
-      <ul className="nav nav-pills nav-fill">
-        <li className="nav-item">
-          <Link className="nav-link" to="/Articles">Articles</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/friends">Friends</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/messages">Messages</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/tasks">Tasks</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/events">Events</Link>
-        </li>
-      </ul>
-    </nav>
+
+          <Link className="#articles" to="/Articles">Articles</Link>
+
+          <Link className="#news" to="/messages">Messages</Link>
+    
+          <Link className="#tasks" to="/tasks">Tasks</Link>
+    
+      
+          <Link className="#events" to="/events">Events</Link>
+          <FriendsList />
+    
+    </div>
+
+  
+
+   </>
   )
 }

@@ -23,10 +23,10 @@ export const ArticleCard = ({ article, handleDeleteArticle }) => {
 
      <div className="buttons">
   
-  <button className="button-74" type="button" onClick={() => handleDeleteArticle(article.id)}>
+  <button className="button-7" type="button" onClick={() => handleDeleteArticle(article.id)}>
   delete </button>
   
-  <button className="button-74" type="button" onClick={() => history.push(`articles/${article.id}/edit`)}>
+  <button className="button-7" type="button" onClick={() => history.push(`articles/${article.id}/edit`)}>
   edit
   </button>
   </div>

@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {getAllArticles, deleteArticle} from '../../modules/ArticleManager'
 import { ArticleCard } from './articleCard';
 import {useHistory} from 'react-router-dom'
-import "./article.css"
+
 
 
 export const ArticleList = () => {
@@ -41,7 +41,7 @@ export const ArticleList = () => {
         <div className="cardHolderHeader">
         <section><h3 className="newsFeed">News Feed</h3></section>
         <section className="postArticleButton">
-        <button className="button-74" role="button" onClick={() => {history.push("/articles/create")}}> 
+        <button className="button-7" role="button" onClick={() => {history.push("/articles/create")}}> 
       <span className="text"> Post </span> </button>
       </section> 
         </div>
