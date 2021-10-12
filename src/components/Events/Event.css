@@ -2,7 +2,7 @@
 
 .card:first-child  {
     width: 100%;
-    background-color: blueviolet;
+    background-color: rgb(233, 140, 217);
     color: white;
     text-transform: uppercase;
     
@@ -10,4 +10,150 @@
 
 .card{
     width: 95%;
+}
+
+.card-holder::-webkit-scrollbar {
+    width: 10px; 
+
+ }
+
+.card-holder::-webkit-scrollbar-track {
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+}
+
+.card-holder::-webkit-scrollbar-thumb {
+  background: #4e4e4e;
+  border-radius: 25px;
+}
+.card-holder::-webkit-scrollbar-corner {
+    border-radius: 10px;
+
+}
+
+  .card-holder {  
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+  
+    align-items: center;
+    width: 400px;
+    height: 600px;
+
+    
+      margin: 1em;
+      padding: 1em;
+      box-shadow: #310f3fd7 10px 10px 0 0;
+      border-radius: 1.25rem;
+      background-color: #6728B5;  
+          ;
+
+  }
+
+.card {
+   
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+width: 300px;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    background-clip: border-box;
+    border-radius: 1.25rem;
+  
+    margin: 1em;
+    padding: 1em;
+    box-shadow: #310f3fd7 4px 4px 0 0;
+  
+
+
+
+  }
+  .card-title{
+      font-size: 24px;
+  }
+  .synopsis{
+    font-size: 16px
+  }
+  .card-body{
+      display: flex;
+    flex-direction: column;
+
+    
+  }
+  .newsFeed{
+     color: white;
+  }
+  .cardHeader {
+      display: flex;
+      flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .cardHolderHeader{
+      
+   
+    display: flex;
+    flex-direction: row;
+  justify-content: space-around;
+
+
+
+  
+}
+
+  .buttons{
+    padding: 1em;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: baseline;
+
+  }
+
+
+
+
+  
+  
+/* CSS */
+.button-7 {
+  background-color: #0095ff;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.button-7:hover,
+.button-7:focus {
+  background-color: #07c;
+}
+
+.button-7:focus {
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+.button-7:active {
+  background-color: #0064bd;
+  box-shadow: none;
 }

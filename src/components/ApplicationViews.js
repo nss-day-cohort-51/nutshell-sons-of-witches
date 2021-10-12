@@ -14,11 +14,16 @@ import { Register } from "./auth/Register"
 
 import { FriendsList } from "./friends/FriendsList"
 import { ArticleForm } from "./Articles/ArticleForm"
+import "./applicationViews.css"
+import "./nav/NavBar.css"
+import "./Articles/article.css"
 import { MessageEditForm } from "./PublicMessages/MessagesEditForm"
 import { MessageForm } from "./PublicMessages/MessagesForm"
 import { MessageList } from "./PublicMessages/MessagesList"
 
 export const ApplicationViews = () => {
+  
+
 
   const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("nutshell_user") !== null)
 
@@ -29,6 +34,13 @@ export const ApplicationViews = () => {
 
   return (
     <>
+    <div className="dashboard">
+<Route exact path="/">
+<ArticleList />
+<EventList />
+<TaskList />
+<h1>Dashboard</h1>
+</Route>
 
       <Route exact path="/Articles">
         <ArticleList />
@@ -53,8 +65,9 @@ export const ApplicationViews = () => {
       <Route exact path="/tasks">
         {/* Render the component for the user's tasks */}
         {isAuthenticated ? <TaskList /> : <Redirect to="/login" />}
+    
       </Route>
-      <Route path="/tasks/create">
+      <Route exact path="/tasks/create">
         <TaskForm />
       </Route>
       <Route path="/tasks/:taskId(\d+)/edit">
@@ -68,7 +81,7 @@ export const ApplicationViews = () => {
       <Route path="/events/create">
         <EventForm />
       </Route>
-      <Route path="/articles/create">
+      <Route exact path="/articles/create">
         <ArticleForm />
       </Route>
       
@@ -88,6 +101,7 @@ export const ApplicationViews = () => {
       <Route path="/register">
         <Register setAuthUser={setAuthUser} />
       </Route>
+      </div>
     </>
   
   )

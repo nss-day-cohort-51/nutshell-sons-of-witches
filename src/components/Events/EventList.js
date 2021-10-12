@@ -36,18 +36,25 @@ export const EventList = () => {
   return (
     <>
     <section className="section-content">
-  <button type="button"
-      className="btn"
+   
+
+    <div className="card-holder">
+    <div className="cardHolderHeader">
+    <h3>Events</h3>
+    <button type="button"
+      className="button-7"
       onClick={() => {history.push("/events/create")}}>
       Add Event
   </button>
-</section>
-
-    <div className="container-cards">
+  </div>
+  <div id="event-card-holder">
       { 
       events.map(event => <EventCard key={event.id}event={event} handleDeleteEvent={handleDeleteEvent}/>)}
-
+</div>
     </div>
-    </>
+    
+
+</section>
+</>
   );
 };

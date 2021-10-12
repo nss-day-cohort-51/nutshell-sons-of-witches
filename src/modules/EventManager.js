@@ -7,7 +7,7 @@ export const getEventById = (eventId) => {
 }
 
 export const getAllEvents = () => {
-  return fetch(`${remoteURL}/events?_sort=date&_order=desc`)
+  return fetch(`${remoteURL}/events?_sort=date&_order=ascd`)
   .then(res => res.json())
 }
 

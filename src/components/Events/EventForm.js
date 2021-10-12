@@ -12,7 +12,8 @@ export const EventForm = () => {
     const [event, setEvent] = useState({
         name: "",
         date: "",
-        location:""
+        location:"",
+        time: ""
     });
 
 
@@ -20,12 +21,14 @@ export const EventForm = () => {
     const history = useHistory();
 //makes copy of object and allows us to add our event, date, and location
     const handleControlledInputChange = (evt) => {
+        const currentUser = parseInt(sessionStorage.getItem("nutshell_user"))
         const newEvent = { ...event }
         let selectedVal = evt.target.value
         if (evt.target.id.includes(" ")) {
             selectedVal = parseInt(selectedVal)
         }
         newEvent[evt.target.id] = selectedVal
+        newEvent.userId = currentUser
         // update state
         setEvent(newEvent)
     }
@@ -35,7 +38,7 @@ export const EventForm = () => {
     const handleClickSaveEvent = (evt) => {
         evt.preventDefault() //Prevents the browser from submitting the form
             addEvent(event)
-                .then(() => history.push("/events"))
+                .then(() => history.push("/"))
     }
 //return gives us the event form and allows us to add an event
     return (
@@ -57,6 +60,13 @@ export const EventForm = () => {
                 <div className="form-group">
                     <label htmlFor="location">Event Location: </label>
                     <input type="text" id="location" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Event Location" value={event.location}/>
+                </div>
+                </fieldset>
+            <fieldset>
+                <div className="form-group">
+                <label for="appt">Time:</label>
+                 <input type="time" id="time"  onChange={handleControlledInputChange} required autoFocus className="form-control" value={event.time}/>
+               
                 </div>
             </fieldset>
             <button className="btn btn-primary"
