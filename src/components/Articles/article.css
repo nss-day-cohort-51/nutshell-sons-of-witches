@@ -34,7 +34,7 @@ border-radius: 25px;
   border-radius: 10px;
 
 }
-#event-card-holder:first-child {
+.event-card-holder {
   width: 100%;
   background-color: rgb(255, 255, 255);
   color: rgb(247, 4, 4);
@@ -56,7 +56,7 @@ border-radius: 25px;
     padding: 1em;
     
     border-radius: 1.25rem;
-    background-color: rgb(152, 93, 223);  
+   
         ;
 
 }
