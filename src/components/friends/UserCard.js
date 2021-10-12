@@ -3,14 +3,16 @@ import { useHistory } from "react-router";
 import { addFriend } from "../../modules/FriendsManager";
 import { getAllFriends } from "../../modules/FriendsManager";
 
-export const UserCard = ({user, setFriends}) => {
+export const UserCard = ({user, setFriends, friends}) => {
 
     const history = useHistory();
+
+    const currentUser = parseInt(sessionStorage.getItem("nutshell_user"))
 
     const AddFriendButton = (id) => {
         
 
-     const currentUser = parseInt(sessionStorage.getItem("nutshell_user"))
+     
      const getUserId = parseInt(id)
      const newFriend = {
         currentUserId: currentUser,
@@ -25,21 +27,30 @@ export const UserCard = ({user, setFriends}) => {
         
     }
 
-
+            
 return(
     <section className="userCard">
         <h3 className="username">{user.name}</h3>
 
-    <button
+    
+    {friends.find(friend => friend.userId === user.id) ?
+            "" :
         
-        type="button"
-        className="button"
-        id={user.id}
-        onClick={(event) =>  AddFriendButton(event.target.id)}
-       
-    >
-        Add Friend
-    </button>
+        
+            <button
+            type="button"
+            className="friend-button"
+            key={user.id}
+            id={user.id}
+            onClick={(event) =>  AddFriendButton(event.target.id)}
+        >
+            Add Friend
+            </button>
+        }
+    
+    
+  
+        
     </section>
 )
 
