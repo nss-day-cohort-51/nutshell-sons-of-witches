@@ -5,6 +5,8 @@ import { useHistory } from 'react-router';
 
 export const EventCard = ({ event, handleDeleteEvent }) => {
     const history = useHistory();
+    const currentUser = parseInt(sessionStorage.getItem("nutshell_user"))
+
     //return shows the event to the DOM
     return (
         <>
@@ -15,6 +17,7 @@ export const EventCard = ({ event, handleDeleteEvent }) => {
                 <p>Event Date: {event.date}</p>
                 <p>Event Location: {event.location}</p>
                 <p>Event Time: {event.time}</p>
+                {event.userId === currentUser && 
                 <div className="buttons">
                 <button className="button-7"  type="button" onClick={() => handleDeleteEvent(event.id)}>Delete</button>
                 <button className="button-7" type="buttson"
@@ -22,7 +25,7 @@ export const EventCard = ({ event, handleDeleteEvent }) => {
                     Edit
                 </button>
                 <button className="button-7" type="button">Weather</button>
-            </div>
+            </div>}
             </div>
         </>
     )
