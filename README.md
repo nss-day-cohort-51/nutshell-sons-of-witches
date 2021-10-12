@@ -16,8 +16,8 @@
 Nutshell is a new product offering that you have been tasked with building. It's an app for people to use to organize their daily tasks, events, news article, friends, and chat messages. Users can either log in or register, and then get started adding articles, tasks, events, and messages. 
 This project has contributions from Jama Mohamed, Sydney Crawley, Leith Abudiab, and Emily Reed.
 
-[ERD]-(Nutshell.png)
-[Wireframe]-(wrieframe.png)
+[ERD]-(https://github.com/nss-day-cohort-51/nutshell-sons-of-witches/blob/main/src/images/wrieframe.png)
+[Wireframe]-(https://github.com/nss-day-cohort-51/nutshell-sons-of-witches/blob/main/src/images/Nutshell.png)
 
 <!-- You will be using the React library to build out this application.
 
