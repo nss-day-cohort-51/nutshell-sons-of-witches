@@ -34,13 +34,7 @@ border-radius: 25px;
   border-radius: 10px;
 
 }
-.event-card-holder {
-  width: 100%;
-  background-color: rgb(255, 255, 255);
-  color: rgb(247, 4, 4);
-  text-transform: uppercase;
-  
-}
+
 .event-card-holder{  
   overflow-y: auto;
   overflow-x: hidden;
@@ -152,9 +146,11 @@ width: 250px;
   
   /* CSS */
   .button-7 {
+    
+    height: 35px;
     background-color: #2b0855;
     border: 1px solid transparent;
-    border-radius: 3px;
+    border-radius: 10px;
     box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
     box-sizing: border-box;
     color: #fff;
@@ -164,7 +160,7 @@ width: 250px;
     font-size: 13px;
     font-weight: 400;
     line-height: 1.15385;
-    margin: 0;
+    margin: 5px;
     outline: none;
     padding: 8px .8em;
     position: relative;

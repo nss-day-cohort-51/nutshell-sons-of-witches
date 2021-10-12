@@ -35,11 +35,15 @@ export const ApplicationViews = () => {
   return (
     <>
     <div className="dashboard">
+    {/* <div>
+    <h1>Dashboard</h1>
+</div> */}
 <Route exact path="/">
 <ArticleList />
 <EventList />
 <TaskList />
-<h1>Dashboard</h1>
+<MessageList />
+
 </Route>
 
       <Route exact path="/Articles">

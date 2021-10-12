@@ -30,7 +30,7 @@ export const ArticleEditForm = () => {
     };
 
  update(editedArticle)
-    .then(() => history.push("/articles")
+    .then(() => history.push("/")
     )
   }
 //takes the new info and updates the previous data to the new data

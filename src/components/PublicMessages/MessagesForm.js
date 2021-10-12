@@ -40,7 +40,7 @@ export const MessageForm = () => {
     const handleClickSaveMessage = (event) => {
         event.preventDefault() //Prevents the browser from submitting the form
             addMessage(message)
-                .then(() => history.push("/messages"))
+                .then(() => history.push("/"))
     }
 //return gives us the message form and allows us to add a message
     return (

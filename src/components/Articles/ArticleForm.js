@@ -44,7 +44,7 @@ export const ArticleForm = () => {
         evt.preventDefault() //Prevents the browser from submitting the form
 
             addArticle(article)
-                .then(() => history.push("/articles"))
+                .then(() => history.push("/"))
     }
 //return gives us the event form and allows us to add an event
     return (

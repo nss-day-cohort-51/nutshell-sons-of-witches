@@ -61,9 +61,9 @@ export const FriendsList = () => {
         
 
             <div className="user-container-cards">
-            <section className="friendsList">
             <h2>My Friends</h2>
             <p>GOOML - Get out of my life / aka delete</p>
+            <section className="friendsList">
             <div className="list">
                
                 {friends.map(friend =>

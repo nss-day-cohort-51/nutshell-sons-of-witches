@@ -8,7 +8,7 @@ export const MessagesCard = ({ message, handleDeleteMessage, setMessages }) => {
     const currentUser = parseInt(sessionStorage.getItem("nutshell_user"))
     return (
         <>
-            <div className="message">
+            <div className="card">
                 <p>{message.user?.name}</p>
                 <h3><span className="card-message">
                  {message.message}
