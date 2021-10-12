@@ -30,7 +30,7 @@ export const MessageEditForm = () => {
     };
 
  update(editedMessage)
-    .then(() => history.push("/messages")
+    .then(() => history.push("/")
     )
   }
 //takes the new info and updates the previous data to the new data

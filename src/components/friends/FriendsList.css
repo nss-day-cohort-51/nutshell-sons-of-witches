@@ -1,22 +1,44 @@
 .user-container-cards {
-   
+    padding: 20px;
+   border-radius: 10px;
     margin: 10px;
-    width: 150px;
+    width: 350px;
+    background-color: white;
 }
 .userlist{
-
-    height: 200px;
-    width: fit-content;
+    
+    
+    padding: 10px;
+    border-radius: 10px;
+    border: solid #2b0855;
+    height: 400px;
     overflow-y: scroll;
     overflow-x: hidden;
+    
 }
 
 .userSearch{
 
     border-radius: 10px;
+    
 }
 
 .friend-button{
      background-color: #2b0855;
     border-radius: 10px;
+    height: 35px;
+    width: 100px;
+}
+
+.userCard{
+    padding: 0px;
+}
+
+.friendsList{
+    overflow-y: scroll;
+    padding-bottom: 120px;
+    height: 300px;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid #2b0855;
 }

@@ -36,19 +36,20 @@ export const MessageList = () => {
  
   return (
     <>
-    <section className="section-content">
+    <section className="event-card-holder">
   <button type="button"
-      className="btn"
+      className="button-7"
       onClick={() => {history.push("/messages/create")}}>
       Add Message
   </button>
-</section>
+
 
     <div className="container-cards">
       { 
       messages.map(message => <MessagesCard key={message.id}message={message} handleDeleteMessage={handleDeleteMessage} setMessages={setMessages}/>)}
 
     </div>
+    </section>
     </>
   );
 };

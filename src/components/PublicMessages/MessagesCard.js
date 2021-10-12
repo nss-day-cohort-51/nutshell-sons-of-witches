@@ -7,14 +7,14 @@ export const MessagesCard = ({ message, handleDeleteMessage, setMessages }) => {
     //return shows the message to the DOM
     return (
         <>
-            <div className="message">
+            <div className="card">
                 <p>{message.user?.name}</p>
                 <h3><span className="card-message">
                  {message.message}
                 </span></h3>
                 <p>Sent at: {message.timestamp}</p>
-                <button type="button" onClick={() => handleDeleteMessage(message.id)}>Delete</button>
-                <button type="button"
+                <button className="button-7" type="button" onClick={() => handleDeleteMessage(message.id)}>Delete</button>
+                <button className="button-7" type="button"
                     onClick={() => history.push(`/messages/${message.id}/edit`)}>
                     Edit
                 </button>
