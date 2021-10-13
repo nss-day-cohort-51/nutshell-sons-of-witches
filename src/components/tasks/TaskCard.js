@@ -18,9 +18,9 @@ export const TaskCard = ({ task, reload, handleDeleteTask}) => {
             <div className="card-info"> 
                 <h3>Task: {(task.name)}</h3>
                 <p>Completion Date: {task.date}</p>
-                {task.userId === currentUser && <div>
+                {task.userId === currentUser && <div className="complete"><label for="complete">complete
                 <input onChange={handleCheckboxComplete}type="checkbox" name="complete" id="complete"></input>
-                <label for="complete">complete</label> </div> }
+                </label> </div> }
                 <p>Expected Completion Date: {task.date}</p>
                 {task.userId === currentUser && <div className="buttons">
                 <button className="button-7" type="button" onClick={() => handleDeleteTask(task.id)}>Delete</button>

@@ -39,11 +39,11 @@ export const ArticleList = () => {
         
         <div className="card-holder">
         <div className="cardHolderHeader">
-        <section><h3 className="newsFeed">News Feed</h3></section>
-        <section className="postArticleButton">
+        
+       
         <button className="button-7" role="button" onClick={() => {history.push("/articles/create")}}> 
       <span className="text"> Post </span> </button>
-      </section> 
+   
         </div>
 
      
