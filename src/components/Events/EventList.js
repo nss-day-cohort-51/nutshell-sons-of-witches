@@ -40,7 +40,7 @@ export const EventList = () => {
 
     <div className="card-holder">
     <div className="cardHolderHeader">
-    <h3>Events</h3>
+  
     <button type="button"
       className="button-7"
       onClick={() => {history.push("/events/create")}}>

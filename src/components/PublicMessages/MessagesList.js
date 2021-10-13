@@ -38,11 +38,13 @@ export const MessageList = () => {
   return (
     <>
     <section className="card-holder">
+    <div className="cardHolderHeader">
   <button type="button"
       className="button-7"
       onClick={() => {history.push("/messages/create")}}>
       Add Message
   </button>
+  </div>
 
 
     <div className="container-cards">

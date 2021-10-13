@@ -6,14 +6,15 @@ import { addArticle } from '../../modules/ArticleManager';
 import "./form.css"
 
 export const ArticleForm = () => {
-   
+    let  date = new Date(Date.now())
 
 //useState will hold the event name, date, and location
     const [article, setArticle] = useState({
     
         title: "",
         synopsis: "",
-        url:""
+        url:"",
+        timestamp: date.toLocaleString()
     });
 
     
@@ -48,8 +49,8 @@ export const ArticleForm = () => {
     }
 //return gives us the event form and allows us to add an event
     return (
-        <form className="articleForm">
-            <h2 className="articleForm__title">New Article</h2>
+        <form className="eventForm">
+            <h2 className="messageForm__title">New Article</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="title">Title</label>

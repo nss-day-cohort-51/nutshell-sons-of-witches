@@ -19,6 +19,7 @@ export const ArticleCard = ({ article, handleDeleteArticle }) => {
         <div className="synopsis">
             <p>{article.synopsis}</p>
             <a href={article.url}>{article.url}</a>
+            <p>posted: {article.timestamp}</p>
             </div>
             
      </div>
